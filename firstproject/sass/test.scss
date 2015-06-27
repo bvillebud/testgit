@@ -1,0 +1,53 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+$primary-color2: #555;
+
+@import "compass/reset";
+@import "compass/css3";
+@import "../foundation/scss/foundation/components/grid";
+
+html{
+  font-size: 62.5%;
+}
+body {
+  font-family: $font-stack;
+  color: $primary-color;
+  @include border-radius(4px, 4px); /* compass mixin */
+}
+
+li { font-size: 1.4rem; } /* =14px */
+h1 { font-size: 2.4rem; } /* =24px */
+
+nav {
+  a{ 
+  color: $primary-color2; 
+  font-size: 3em;
+  }
+}
+
+.grid-yep{
+  @include grid-column($center:true, $collapse:null, $float:false);
+}
+
+.row div{border:1px solid green; font-size: 2rem;}
+
+.message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;  
+}
+
+.success {
+  @extend .message;
+  border-color: green;
+}
+
+.error {
+  @extend .message;
+  border-color: red;
+}
+
+article[role="main"] {
+  float: left;
+  width: 600px / 960px * 100%;
+}
